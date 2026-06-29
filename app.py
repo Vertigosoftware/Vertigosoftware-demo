@@ -123,7 +123,7 @@ if st.session_state.page == 'home':
     
     st.write(" ")
     st.write(" ")
-    slide = st.slider("slide left to continue", min_value=0, max_value=100, value=0)
+    slide = st.slider("slide right to continue", min_value=0, max_value=100, value=0)
     
     if slide >= 80:
         st.session_state.page = 'main'
@@ -151,7 +151,7 @@ elif st.session_state.page == 'main':
             clean_val = int(user_input)
             input_valid = True
         else:
-            st.error("🚨 please input numbers only")
+            st.error(" please input numbers only")
 
     # Three buttons in series with explicit text labels
     col1, col2, col3 = st.columns(3)
@@ -160,14 +160,14 @@ elif st.session_state.page == 'main':
         if st.button("Add Amount") and input_valid:
             msg_slot = st.empty()
             
-            msg_slot.markdown('<p class="cyber-yellow">⚠️ cutting off connection to simulate offline-first mode</p>', unsafe_allow_html=True)
+            msg_slot.markdown('<p class="cyber-yellow"> cutting off connection to simulate offline-first mode</p>', unsafe_allow_html=True)
             time.sleep(2)
             
-            msg_slot.markdown('<p class="cyber-yellow">💾 saving into database until connection is restored</p>', unsafe_allow_html=True)
+            msg_slot.markdown('<p class="cyber-yellow"> saving into database until connection is restored</p>', unsafe_allow_html=True)
             update_balance(clean_val)
             time.sleep(2)
             
-            msg_slot.markdown('<p class="cyber-yellow">🔄 connection restored, syncing to the cloud</p>', unsafe_allow_html=True)
+            msg_slot.markdown('<p class="cyber-yellow"> connection restored, syncing to the cloud</p>', unsafe_allow_html=True)
             time.sleep(1.5)
             msg_slot.empty()
             st.rerun()
