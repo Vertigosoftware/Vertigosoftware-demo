@@ -125,7 +125,7 @@ if st.session_state.page == 'home':
     st.write(" ")
     slide = st.slider("slide right to continue", min_value=0, max_value=100, value=0)
     
-    if slide >= 80:
+    if slide >= 50:
         st.session_state.page = 'main'
         st.rerun()
 
