@@ -123,7 +123,7 @@ if st.session_state.page == 'home':
     
     st.write(" ")
     st.write(" ")
-    slide = st.slider("slide right to continue", min_value=0, max_value=100, value=0)
+    slide = st.slider("👇slide right to continue", min_value=0, max_value=100, value=0)
     
     if slide >= 10:
         st.session_state.page = 'main'
